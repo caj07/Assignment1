@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace assignment1
 {
-    public abstract class Operations : StaticName
+    public abstract class Operations : TA
     {
         protected object state;
         protected object object1;

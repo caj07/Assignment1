@@ -63,10 +63,13 @@
     <Compile Include="Primitives\Primitives.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Generic Classes\StaticName.cs" />
+    <Compile Include="Generic Classes\TA.cs" />
     <Compile Include="Operations\TAAnd.cs" />
     <Compile Include="Complex\TAArray.cs" />
     <Compile Include="Primitives\TABool.cs" />
+    <Compile Include="Generic Classes\TAConstant.cs" />
+    <Compile Include="Complex Operations\TAArrayAccess.cs" />
+    <Compile Include="Complex Operations\TAArraySize.cs" />
     <Compile Include="Unary Operations\TACeiling.cs" />
     <Compile Include="Operations\TADivide.cs" />
     <Compile Include="Primitives\TADouble.cs" />
@@ -101,6 +104,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

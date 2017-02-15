@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace assignment1
 {
-    public abstract class Primitives : StaticName 
+    public abstract class Primitives : TA 
     {       
         private object state;
 

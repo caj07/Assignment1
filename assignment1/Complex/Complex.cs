@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace assignment1
 {
-    public class Complex : StaticName
+    public class Complex : TA
     {
-        protected object value;
-
-        protected object Value { get { return value; } }
+        protected int index;
 
         protected Complex(string staticName) : base(staticName)
         {
@@ -20,10 +18,6 @@ namespace assignment1
         public Complex() 
         {
 
-        }
-        protected void Set(object val)
-        {
-            value = val;
         }
     }
 }

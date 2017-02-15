@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace assignment1
 {
-    public class StaticName
+    public class TA
     {
         protected static List<string> _instances;
         protected string name;
 
         protected string Name { get { return name; } }
 
-        static StaticName()
+        static TA()
         {
             _instances = new List<string>();
         }
-        protected StaticName()
+        protected TA()
         {
             //Do nothing, this must be coming from a class that does not require it.
         }
-        protected StaticName(string staticName)
+        protected TA(string staticName)
         {
             if (!string.IsNullOrEmpty(staticName))
             {
