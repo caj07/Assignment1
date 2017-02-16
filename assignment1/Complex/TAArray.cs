@@ -8,9 +8,12 @@ namespace assignment1
 {
     public class TAArray : Complex
     {
+        // array property
         private TA[] array;
+        // holds the size of the array
         private int size;
 
+        // Constructor of the array. Checks which type the array should be. Also includes the static name and size of the array.
         public TAArray(string staticName, Type type, int maxSize) : base(staticName)
         {
             if (type == typeof(TABool))
@@ -52,11 +55,13 @@ namespace assignment1
             size = maxSize;
         }
 
+        // Returns the value in the array at the specific index
         public TA Index(int index)
         {
             return array[index];
         }
 
+        // Returns the size of the array.
         public int Size(int index)
         {
             return size;

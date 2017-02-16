@@ -8,20 +8,25 @@ namespace assignment1
 {
     public class TAMinus : UnaryOperations
     {
+        //Returns the state of instance
         public new object State { get { return base.State; } }
+        //Constructor that calls the base constructor with the instance static name
         public TAMinus(TADouble val,string staticName) : base(staticName)
         {
             this.obj = val;
         }
+        // Static name is optional, so this constructor is for the TADouble without a name
         public TAMinus(TADouble val)
         {
             this.obj = val;
         }
+        // Static name is optional, so this constructor is for the TAInt without a name
         public TAMinus(TAInt val)
         {
             this.obj = val;
         }
 
+        //Evaluates and update the current state
         public override void Evaluate()
         {
             if (obj is TADouble)
@@ -34,6 +39,7 @@ namespace assignment1
             }
         }
 
+        //Prints the current state
         public override void PrintState()
         {
             Console.WriteLine(this.State);

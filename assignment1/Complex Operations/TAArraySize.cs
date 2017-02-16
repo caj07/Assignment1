@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace assignment1
 {
-    public class TAArraySize
+    public class TAArraySize 
     {
     }
 }
