@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace assignment1
 {
-    class TACeiling : UnaryOperations
+    class TACeiling : TAInt, Operations
     {
+        // Stores the object that we will evaluate or print its state
+        protected object obj;
         //Returns the state of instance
-        public new object State { get { return base.State; } }
+        public new int State { get { return base.State; } }
         //Constructor that calls the base constructor with the instance static name
         protected TACeiling(TADouble val, string staticName) : base(staticName)
         {
@@ -21,12 +23,12 @@ namespace assignment1
             this.obj = val;
         }
         //Evaluates and update the current state to the ceiling of the object
-        public override void Evaluate()
+        public  void Evaluate()
         {
-            this.state = Math.Ceiling(((TADouble)obj).State);
+            this.Set((int)Math.Ceiling(((TADouble)obj).State));
         }
         //Prints the current state
-        public override void PrintState()
+        public  void PrintState()
         {
             Console.WriteLine(this.State);
         }

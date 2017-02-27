@@ -12,6 +12,10 @@ namespace assignment1
         public TABool(string staticName) : base(staticName)
         {
         }
+        protected TABool() :base()
+        {
+
+        }
         // Return the state of the instance
         public new bool State { get { return (bool)base.State; } }
 

@@ -19,6 +19,10 @@ namespace assignment1
         {
            
         }
+        protected Primitives() : base()
+        {
+
+        }
         //used to set the state 
         protected void Set(object val)
         {

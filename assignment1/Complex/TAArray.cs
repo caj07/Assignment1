@@ -13,6 +13,11 @@ namespace assignment1
         // holds the size of the array
         private int size;
 
+        //Calls the TAArray constructor that supports maxsize as an integer
+        public TAArray(string staticName, Type type, TAInt maxSize) : this(staticName, type, maxSize.State)
+        {
+
+        }
         // Constructor of the array. Checks which type the array should be. Also includes the static name and size of the array.
         public TAArray(string staticName, Type type, int maxSize) : base(staticName)
         {
@@ -62,9 +67,12 @@ namespace assignment1
         }
 
         // Returns the size of the array.
-        public int Size(int index)
+        public int Size
         {
-            return size;
+            get
+            {
+                return size;
+            }
         }
     }
 }

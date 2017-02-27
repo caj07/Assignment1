@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace assignment1
 {
-    public class TANot : UnaryOperations
+    public class TANot : TABool, Operations
     {
+        // Stores the object that we will evaluate or print its state
+        protected object obj;
+
         //Constructor that calls the base constructor with the instance static name
-        public TANot(string staticName) : base(staticName)
+        public TANot(TABool val,string staticName) : base(staticName)
         {
+            this.obj = val;
         }
         // Static name is optional, so this constructor is for the other case
         public TANot(TABool val)
@@ -21,13 +25,13 @@ namespace assignment1
         public new object State { get { return base.State; } }
         
         //Evaluates and update the current state
-        public override void Evaluate()
+        public void Evaluate()
         {
-            this.state = !((TABool)obj).State;
+            this.Set(!((TABool)obj).State);
         }
 
         //Prints the current state
-        public override void PrintState()
+        public void PrintState()
         {
             Console.WriteLine(this.State);
         }

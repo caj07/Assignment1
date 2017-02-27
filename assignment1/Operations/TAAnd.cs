@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace assignment1
 {
-    public class TAAnd : Operations
+    public class TAAnd : TABool, Operations
     {
+        // stores the state of the 2 objects we should evaluate
+        protected object object1;
+        protected object object2;
         public new object State { get { return base.State; } }
 
         public TAAnd(TABool a, TABool b, string staticName) : base(staticName)
@@ -18,16 +21,27 @@ namespace assignment1
         {
             SetObjects(a, b);
         }
+        //Sets the properties
         private void SetObjects(object a, object b)
         {
             this.object1 = a;
             this.object2 = b;
         }
-        public override void Evaluate()
+        //Evaluates and update the current state of the object
+        public void Evaluate()
         {
-            this.state = ((TABool)object1).State && ((TABool)object2).State;
+            if (object1 is Operations)
+            {
+                ((Operations)object1).Evaluate();
+            }
+            if (object2 is Operations)
+            {
+                ((Operations)object2).Evaluate();
+            }
+            this.Set(((TABool)object1).State && ((TABool)object2).State);
         }
-        public override void PrintState()
+        //Prints the current state
+        public void PrintState()
         {
             Console.WriteLine(this.State);
         }

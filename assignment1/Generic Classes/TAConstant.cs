@@ -6,23 +6,19 @@ using System.Threading.Tasks;
 
 namespace assignment1
 {
-    public class TAConstant : TA
+    public class TAConstant : TAInt
     {
-        // private property of the constant
-        private int constant;
         //Constructor that initializes the class and provides it with a name and the constant value.
         public TAConstant(int constant, string staticName) : base(staticName)
         {
-            this.constant = constant;
+            this.Set(constant);
         }
 
         //Constructor that initializes the class and provides it with the constant value.
         public TAConstant(int constant) : base()
         {
-            this.constant = constant;
+            this.Set(constant);
         }
-        // State property return the constant value
-        public int State { get { return constant; } }
         
     }
 }

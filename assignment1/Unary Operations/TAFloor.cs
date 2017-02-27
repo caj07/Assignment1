@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace assignment1
 {
-    public class TAFloor : UnaryOperations
+    public class TAFloor : TAInt, Operations
     {
+        // Stores the object that we will evaluate or print its state
+        protected object obj;
         //Returns the state of instance
         public new object State { get { return base.State; } }
         //Constructor that calls the base constructor with the instance static name
@@ -21,12 +23,12 @@ namespace assignment1
             this.obj = val;
         }
         //Evaluates and update the current state to the floor of the object
-        public override void Evaluate()
+        public void Evaluate()
         {
-            this.state = Math.Floor(((TADouble)obj).State);
+            this.Set(Math.Floor(((TADouble)obj).State));
         }
         //Prints the current state
-        public override void PrintState()
+        public void PrintState()
         {
             Console.WriteLine(this.State);
         }

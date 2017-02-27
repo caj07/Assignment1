@@ -6,41 +6,38 @@ using System.Threading.Tasks;
 
 namespace assignment1
 {
-    public class TAMinus : UnaryOperations
+    public class TAMinus : Primitives, Operations
     {
+        // Stores the object that we will evaluate or print its state
+        protected object obj;
         //Returns the state of instance
         public new object State { get { return base.State; } }
         //Constructor that calls the base constructor with the instance static name
-        public TAMinus(TADouble val,string staticName) : base(staticName)
+        public TAMinus(Primitives val,string staticName) : base(staticName)
         {
             this.obj = val;
         }
-        // Static name is optional, so this constructor is for the TADouble without a name
-        public TAMinus(TADouble val)
-        {
-            this.obj = val;
-        }
-        // Static name is optional, so this constructor is for the TAInt without a name
-        public TAMinus(TAInt val)
+        // Static name is optional, so this constructor is for the Primitves without a name
+        public TAMinus(Primitives val)
         {
             this.obj = val;
         }
 
         //Evaluates and update the current state
-        public override void Evaluate()
+        public void Evaluate()
         {
             if (obj is TADouble)
             {
-                this.state = -((TADouble)obj).State;
+                this.Set(-((TADouble)obj).State);
             }
             else if (obj is TAInt)
             {
-                this.state = -((TAInt)obj).State;
+                this.Set(-((TAInt)obj).State);
             }
         }
 
         //Prints the current state
-        public override void PrintState()
+        public void PrintState()
         {
             Console.WriteLine(this.State);
         }

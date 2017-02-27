@@ -12,6 +12,10 @@ namespace assignment1
         public TAInt(string staticName) : base(staticName)
         {
         }
+        protected TAInt() :base()
+        {
+
+        }
         // Return the state of the instance
         public new int State { get { return (int)base.State; } }
 
